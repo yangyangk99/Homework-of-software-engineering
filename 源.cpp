@@ -1,6 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include"test.h"
+int Max(int a[], int n) {
+	int maxSum = 0;
+	int proSum = 0;
+	for (int i = 0; i < n; i++) {
+		if (proSum < 0)
+			proSum = a[i];
+		else
+			proSum = proSum + a[i];
+		if (maxSum < proSum)
+			maxSum = proSum;
+	}
+	return maxSum;
+}
 int main() {
 	int n;
 	int a[100];
